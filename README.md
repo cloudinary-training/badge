@@ -40,7 +40,7 @@ To use the following specifications for collecting data:
 
 Use the following URL
 
-https://cloudinary-training.github.io/index.html?cn=djh67gzdu&title=CSM%20Test&date=July%202020
+https://badge.cloudinary.training/index.html?cn=djh67gzdu&title=CSM%20Test&date=July%202020
 
 
 Choose an identifier string like "badge1" and then run - use the identifier in the querystring as the tag value

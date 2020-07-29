@@ -285,10 +285,10 @@ function deleteNoFaceImage(result) {
 }
 
 function getConfig() {
-  let identifier = prompt("Please a badge set identifier:");
+  let identifier = prompt("Please enter a badge:");
   if (identifier && identifier.length > 0) {
     CONFIG.identifier = identifier;
-    CONFIG.preset = `${CONFIG.preset}`;
+    CONFIG.preset = `${identifier}-preset`;
     return true;
   } else {
     return false;
@@ -344,7 +344,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         var myWidget = cloudinary.createUploadWidget(
           {
             cloudName: CLOUD_NAME,
-            upload_preset: PRESET,
+            upload_preset: `${CONFIG.preset}`,
             sources: ["local", "url", "camera", "facebook"],
             context: contextMap,
             clientAllowedFormats: ["png", "gif", "jpeg"],
