@@ -4,7 +4,7 @@ const COURSE_TITLE = PARAMS.has("title")? PARAMS.get("title"): "Cloudinary";
 const COURSE_DATE = PARAMS.has("date")? PARAMS.get("date"):"2020"
 const BADGE_TAG = PARAMS.has("tag") ? PARAMS.get("tag") : "badge"
 const PRESET = "badge-preset";
-const BADGE_TRANSFORM = "t_v-badge";
+const BADGE_TRANSFORM = "t_v-badge-color";
 const NOT_ALLOW_DUPS = true;
 
 const cl = new cloudinary.Cloudinary({ cloud_name: CLOUD_NAME, secure: true });
@@ -277,6 +277,8 @@ function deleteNoFaceImage(result) {
 
 
 document.addEventListener("DOMContentLoaded", (event) => {
+  //modal to get identifier
+
   //disable upload button
   setCourseTitleAndDate();
   setUploadButton(false);
