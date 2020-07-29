@@ -40,10 +40,10 @@ To use the following specifications for collecting data:
 
 Use the following URL
 
-https://studentid.cloudinary.training/index.html?cn=djh67gzdu&title=CSM%20Test&tag=badge1&date=July%202020
+https://cloudinary-training.github.io/index.html?cn=djh67gzdu&title=CSM%20Test&date=July%202020
 
 
-Choose an identifer string like "badge1" and then run - use the identifier in the querystring as the tag value
+Choose an identifier string like "badge1" and then run - use the identifier in the querystring as the tag value
 ```bash
 node create-badge-preset.js badge1
 ```
