@@ -1,0 +1,5 @@
+.env
+my-notes.md
+node_modules/
+.vscode/settings.json
+
