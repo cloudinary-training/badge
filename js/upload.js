@@ -2,6 +2,7 @@ const PARAMS = new URLSearchParams(window.location.search);
 const CLOUD_NAME = PARAMS.has("cn") ? PARAMS.get("cn") : "pictures77";
 const COURSE_TITLE = PARAMS.has("title") ? PARAMS.get("title") : "Cloudinary";
 const COURSE_DATE = PARAMS.has("date") ? PARAMS.get("date") : "2020";
+const BADGE = PARAMS.has("badge") ? PARAMS.get("badge") : "";
 
 const NOT_ALLOW_DUPS = true;
 // const IDENTIFIER = PARAMS.has("tag") ? PARAMS.get("tag") : "badge"
@@ -285,6 +286,11 @@ function deleteNoFaceImage(result) {
 }
 
 function getConfig() {
+  if (BADGE && BADGE.length > 0){
+    CONFIG.identifier = BADGE;
+    CONFIG.preset = `${BADGE}-preset`;
+    return true;
+  }
   let identifier = prompt("Please enter a badge:");
   if (identifier && identifier.length > 0) {
     CONFIG.identifier = identifier;
