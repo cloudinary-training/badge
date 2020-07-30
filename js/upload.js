@@ -1,12 +1,10 @@
 const PARAMS = new URLSearchParams(window.location.search);
-const CLOUD_NAME = PARAMS.has("cn") ? PARAMS.get("cn") : "pictures77";
+const CLOUD_NAME = PARAMS.has("cn") ? PARAMS.get("cn") : "djh67gzdu";
 const COURSE_TITLE = PARAMS.has("title") ? PARAMS.get("title") : "Cloudinary";
 const COURSE_DATE = PARAMS.has("date") ? PARAMS.get("date") : "2020";
 const BADGE = PARAMS.has("badge") ? PARAMS.get("badge") : "";
 
 const NOT_ALLOW_DUPS = true;
-// const IDENTIFIER = PARAMS.has("tag") ? PARAMS.get("tag") : "badge"
-// const PRESET = `${IDENTIFIER}-preset`
 const CONFIG = {};
 
 const cl = new cloudinary.Cloudinary({ cloud_name: CLOUD_NAME, secure: true });
@@ -51,12 +49,9 @@ function doubleEncode(str) {
 //student should have context data: fname, lname, email,title, org, bgcolor
 //add URL and fullname
 function createStudentData(student) {
-  // console.log("createStudentData");
-  // console.log("createStudentData:", JSON.stringify(student, null, 2));
   let contextMap = student && student.context ? student.context.custom : null;
   if (!contextMap) {
     //a student with no context - fix by creating dummy context - this should never happen
-
     console.log("No context:", JSON.stringify(student, null, 2));
     // create dummy context values
     contextMap = {
@@ -105,7 +100,6 @@ function createStudentData(student) {
 //create HTML
 function createGalleryEntry(student) {
   console.log("createGalleryEntry:");
-  // console.log("createGalleryEntry:", JSON.stringify(student, null, 2));
   const article = document.createElement("article");
   article.classList.add("student-listing");
   //image container
@@ -314,10 +308,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
   setCourseTitleAndDate();
   setUploadButton(false);
   renderStudents();
-  // document.querySelector('.close-msg').addEventListener('click',event=>{
-  //   document.querySelector('#banner').classList.remove('show');
-  //   document.querySelector('#banner').classList.add('hide');
-  // })
   document.querySelector("#delete-btn").addEventListener("click", (event) => {
     let fname =
       document.querySelector("#delete-fname").value ||
@@ -353,7 +343,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             upload_preset: `${CONFIG.preset}`,
             sources: ["local", "url", "camera", "facebook"],
             context: contextMap,
-            clientAllowedFormats: ["png", "gif", "jpeg"],
+            clientAllowedFormats: ["png", "jpeg"],
             return_delete_token: 1,
           },
           (error, result) => {
