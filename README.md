@@ -27,12 +27,14 @@ node create-badge-preset.js
 4. Run the script `create-named-badge-xform-color.js`. This script will create the transformation that will overlay student supplied data: name, title, organization to the badge, as well as apply background and foreground color to the student information.  You only need to run this once per cloud account.
 ```bash
 node create-named-badge-xform-color.js
-```
+``` 
+
 5. Supply a URL to students for a particular course like this: 
 ```bash
 https://badge.cloudinary.com/index.html?cn=cloud_name&title=course%20title&date=course%20date&badge=mybadge
 ```
-Use the Cloud Name for the cloud you created in step 1 for **cn**.  Add a URL encoded string for **title** and **date**.  The title and date should show up in your header.
+Use the Cloud Name for the cloud you created in step 1 for **cn**.  Add a URL encoded string for **title** and **date**.  The title and date should show up in your header.  
+
 6. We are adding a version with current epoch time to bust the cache so that we can pick up new images with the **badge** tag without running into caching problems.  
 You can also accomplish cache busting with a setting in your cloud.  You need to get support to help with that and it shouldn't be necessary. Cloudinary admin cloud setting for list sync: 
 ![list setting](./images/list-setting.jpg)
