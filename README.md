@@ -31,7 +31,7 @@ node create-named-badge-xform-color.js
 
 5. Supply a URL to students for a particular course like this: 
 ```bash
-https://badge.cloudinary.com/index.html?cn=cloud_name&title=course%20title&date=course%20date&badge=mybadge
+https://badge.cloudinary.training/index.html?cn=cloud_name&title=course%20title&date=course%20date&badge=mybadge
 ```
 Use the Cloud Name for the cloud you created in step 1 for **cn**.  Add a URL encoded string for **title** and **date**.  The title and date should show up in your header.  
 
